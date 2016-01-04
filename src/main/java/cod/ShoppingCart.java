@@ -28,6 +28,12 @@ public interface ShoppingCart {
 	boolean contains(Item i);
 
 	/**
+	 *
+	 */
+	void validate();
+
+
+	/**
 	 * Compute the size of the shopping cart, i.e., the number of items stored in it
 	 * @return the size, as an integer
 	 */

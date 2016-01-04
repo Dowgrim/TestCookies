@@ -8,6 +8,7 @@ import java.util.*;
 public class VolatileShoppingCart implements ShoppingCart {
 
 	private Set<Item> items = new HashSet<>();
+	private boolean valide = false;
 
     private String dateOfPassage;
 
@@ -33,6 +34,11 @@ public class VolatileShoppingCart implements ShoppingCart {
     {
         return dateOfPassage;
     }
+
+	@Override
+	public void validate(){
+		valide = true;
+	}
 
 	@Override
 	public void remove(Item i) { add(new Item(i.getCookie(), -i.getQuantity())); }
