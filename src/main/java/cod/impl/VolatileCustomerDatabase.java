@@ -15,6 +15,11 @@ public class VolatileCustomerDatabase implements CustomerDatabase {
 	public void add(Customer c) { customers.add(c); }
 
 	@Override
+	public Set getSet(){
+		return customers;
+	}
+
+	@Override
 	public Optional<Customer> findByFirstName(String firstName) {
 		return customers
 				.stream()

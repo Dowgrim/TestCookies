@@ -31,6 +31,6 @@ public class ShowCart extends Command<CookieOnDemand> {
 
 	@Override
 	public String describe() {
-		return "show the cart contents for a given customer (cart CUSTOMER)";
+		return "Show the cart contents for a given customer (cart CUSTOMER)";
 	}
 }
