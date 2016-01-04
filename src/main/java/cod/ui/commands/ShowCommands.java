@@ -17,6 +17,7 @@ public class ShowCommands extends Command<CookieOnDemand> {
 	@Override
 	public void execute() {
 		Set<Customer> cstmrs = system.getCustomers().getSet();
+
 		for(Customer c : cstmrs){
 			ShoppingCart cart = system.getShoppingCart(c);
 			System.out.println(c.getFirstName() + " (" + c.getDateofPassage() + ") :");
@@ -33,4 +34,9 @@ public class ShowCommands extends Command<CookieOnDemand> {
 	public String describe() {
 		return "Show the list of all commands (list)";
 	}
+
+    public boolean nullHour(String hour)
+    {
+        return (hour == null)? true : false;
+    }
 }

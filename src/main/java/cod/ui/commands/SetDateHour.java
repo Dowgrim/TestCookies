@@ -32,6 +32,6 @@ public class SetDateHour extends Command<CookieOnDemand> {
 
     @Override
     public String describe() {
-        return "Set the date and hour to get your cookies (set CUSTOMER DATE)";
+        return "Set the date and hour to get your cookies (set CUSTOMER DATE (format yyyy-MM-dd))";
     }
 }
