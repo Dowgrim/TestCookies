@@ -1,36 +1,36 @@
 package cod.ui.commands;
 
 import cod.CookieOnDemand;
+import cod.CustomerDatabase;
 import cod.ShoppingCart;
 import cod.tcf.Customer;
 import cod.ui.framework.Command;
 
 import java.util.List;
+import java.util.Set;
 
 public class ShowCommands extends Command<CookieOnDemand> {
 
-	private Customer customer;
-
 	@Override
-	public String identifier() { return "cart"; }
+	public String identifier() { return "list"; }
 
 	@Override
 	public void execute() {
-		ShoppingCart cart = system.getShoppingCart(customer);
-		if (cart.contents().isEmpty()){
-			System.out.println("  Empty cart");
-		} else {
-			System.out.println("  " + cart.contents());
+		Set<Customer> cstmrs = system.getCustomers().getSet();
+		for(Customer c : cstmrs){
+			ShoppingCart cart = system.getShoppingCart(c);
+			System.out.println(c.getFirstName() + " :");
+			if (cart.contents().isEmpty()){
+				System.out.println("  Empty cart");
+			} else {
+				System.out.println("  " + cart.contents());
+			}
 		}
-	}
 
-	@Override
-	public void load(List<String> args) {
-		customer = system.getCustomers().findByFirstName(args.get(0)).get();
 	}
 
 	@Override
 	public String describe() {
-		return "show the cart contents for a given customer (cart CUSTOMER)";
+		return "Show the list of all commands (list)";
 	}
 }

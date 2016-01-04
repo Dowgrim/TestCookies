@@ -2,6 +2,7 @@ package cod;
 
 import cod.tcf.Customer;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * The Customer database allows one to access to TCF's customers.
@@ -13,6 +14,12 @@ public interface CustomerDatabase {
 	 * @param c the customer to be added
 	 */
 	void add(Customer c);
+
+	/**
+	 *
+	 * @return
+	 */
+	Set getSet();
 
 	/**
 	 * Looks for a Customer based on a given first name
