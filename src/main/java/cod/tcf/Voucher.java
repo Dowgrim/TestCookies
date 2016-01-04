@@ -13,6 +13,8 @@ public class Voucher {
 	private String uuid;
 	// The ordered cookies.
 	private List<Item> contents;
+    // the hour the customer will come and get his cookies
+    private String dateOfPassage;
 
 	public Voucher() {
 		uuid = UUID.randomUUID().toString();
@@ -26,6 +28,11 @@ public class Voucher {
 		return contents;
 	}
 
+    public void setDateOfPassage(String dateOfPassage)
+    {
+        this.dateOfPassage = dateOfPassage;
+    }
+
 	public int numberOfCookies() {
 		return contents.stream().map(it -> it.getQuantity()).reduce(0,(acc,n) -> acc + n);
 	}
@@ -35,6 +42,7 @@ public class Voucher {
 		return "Voucher for "+ numberOfCookies()+" cookies { " +
 				"ref: '" + uuid + '\'' +
 				" -> " + contents +
+                "Date/Hour: " + dateOfPassage +
 				" }";
 	}
 }
