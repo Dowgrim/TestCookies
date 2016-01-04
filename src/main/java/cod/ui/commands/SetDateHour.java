@@ -14,23 +14,24 @@ public class SetDateHour extends Command<CookieOnDemand> {
 
     private Customer customer;
 
+    private String dateOfPassage;
+
     @Override
     public String identifier() { return "set"; }
 
     @Override
     public void load(List<String> args) {
         customer = system.getCustomers().findByFirstName(args.get(0)).get();
+        dateOfPassage = args.get(1);
     }
 
     @Override
     public void execute() {
-        system.process(customer);
-        Voucher v = customer.getVoucher().get();
-        System.out.println("  " + v);
+        customer.setDateOfPassage(dateOfPassage);
     }
 
     @Override
     public String describe() {
-        return "Set the date and hour to get your cookies";
+        return "Set the date and hour to get your cookies (set CUSTOMER DATE)";
     }
 }

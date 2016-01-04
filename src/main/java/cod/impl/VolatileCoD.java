@@ -46,6 +46,7 @@ public class VolatileCoD implements CookieOnDemand {
 			v.getContents().add(i);
 			cart.remove(i);
 		}
+        v.setDateOfPassage(c.getDateofPassage());
 		c.setVoucher(Optional.of(v));
 	}
 
