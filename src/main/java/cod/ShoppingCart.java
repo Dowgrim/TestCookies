@@ -48,4 +48,6 @@ public interface ShoppingCart {
     public void setDateOfPassage(String s);
 
     public String getDateofPassage();
+
+    public boolean dateIsNull();
 }

@@ -36,6 +36,7 @@ public class ShowCommands extends Command<CookieOnDemand> {
         Set<String> s = orderMap.keySet();
         for(String set : s)
         {
+            System.out.println(set);
             System.out.println(orderMap.get(set));
         }
 

@@ -56,4 +56,9 @@ public class VolatileShoppingCart implements ShoppingCart {
 		return result;
 	}
 
+    public boolean dateIsNull()
+    {
+        return(dateOfPassage == null)? true : false;
+    }
+
 }
