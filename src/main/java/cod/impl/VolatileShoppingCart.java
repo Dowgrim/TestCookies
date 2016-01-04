@@ -8,6 +8,7 @@ import java.util.*;
 public class VolatileShoppingCart implements ShoppingCart {
 
 	private Set<Item> items = new HashSet<>();
+	private boolean valide = false;
 
 	@Override
 	public void add(Item i) {
@@ -20,6 +21,11 @@ public class VolatileShoppingCart implements ShoppingCart {
 		} else {
 			items.add(i);
 		}
+	}
+
+	@Override
+	public void validate(){
+		valide = true;
 	}
 
 	@Override
