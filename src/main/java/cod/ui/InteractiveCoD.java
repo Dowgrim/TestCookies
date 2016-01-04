@@ -24,7 +24,6 @@ public class InteractiveCoD extends Shell<CookieOnDemand> {
 				RemoveCookie.class,
 				ProcessCart.class,
                 SetDateHour.class,
-
 				ShowCommands.class
 		);
 

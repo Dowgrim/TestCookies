@@ -19,7 +19,7 @@ public class ShowCommands extends Command<CookieOnDemand> {
 		Set<Customer> cstmrs = system.getCustomers().getSet();
 		for(Customer c : cstmrs){
 			ShoppingCart cart = system.getShoppingCart(c);
-			System.out.println(c.getFirstName() + " :");
+			System.out.println(c.getFirstName() + " (" + c.getDateofPassage() + ") :");
 			if (cart.contents().isEmpty()){
 				System.out.println("  Empty cart");
 			} else {
