@@ -9,6 +9,8 @@ public class VolatileShoppingCart implements ShoppingCart {
 
 	private Set<Item> items = new HashSet<>();
 
+    private String dateOfPassage;
+
 	@Override
 	public void add(Item i) {
 		// handling the case where the same cookie is already on the shopping cart
@@ -21,6 +23,16 @@ public class VolatileShoppingCart implements ShoppingCart {
 			items.add(i);
 		}
 	}
+
+    public void setDateOfPassage(String s)
+    {
+        this.dateOfPassage = s;
+    }
+
+    public String getDateofPassage()
+    {
+        return dateOfPassage;
+    }
 
 	@Override
 	public void remove(Item i) { add(new Item(i.getCookie(), -i.getQuantity())); }

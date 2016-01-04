@@ -13,8 +13,6 @@ public class Customer {
 	// The voucher associated to the latest order, if any,
 	private Optional<Voucher> voucher;
 
-    //The date of passage associated to the latest order, if any
-    private String dateOfPassage;
 
 	public Customer(String firstName) {
 		this.firstName = firstName;
@@ -39,15 +37,7 @@ public class Customer {
 		return getFirstName().hashCode();
 	}
 
-    public void setDateOfPassage(String s)
-    {
-        this.dateOfPassage = s;
-    }
 
-    public String getDateofPassage()
-    {
-        return dateOfPassage;
-    }
 
 	@Override
 	public String toString() {

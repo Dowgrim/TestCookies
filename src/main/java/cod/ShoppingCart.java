@@ -39,4 +39,7 @@ public interface ShoppingCart {
 	 */
 	List<Item> contents();
 
+    public void setDateOfPassage(String s);
+
+    public String getDateofPassage();
 }

@@ -6,8 +6,8 @@ import cod.ShoppingCart;
 import cod.tcf.Customer;
 import cod.ui.framework.Command;
 
-import java.util.List;
-import java.util.Set;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class ShowCommands extends Command<CookieOnDemand> {
 
@@ -16,17 +16,28 @@ public class ShowCommands extends Command<CookieOnDemand> {
 
 	@Override
 	public void execute() {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        TreeMap<String, String> orderMap = new TreeMap<String, String>();
+        String buffer = new String();
 		Set<Customer> cstmrs = system.getCustomers().getSet();
 
 		for(Customer c : cstmrs){
 			ShoppingCart cart = system.getShoppingCart(c);
-			System.out.println(c.getFirstName() + " (" + c.getDateofPassage() + ") :");
+			buffer += c.getFirstName() + " (" + cart.getDateofPassage() + ") :";
 			if (cart.contents().isEmpty()){
-				System.out.println("  Empty cart");
+				buffer += "  Empty cart";
 			} else {
-				System.out.println("  " + cart.contents());
+				buffer += "  " + cart.contents();
 			}
+
+            orderMap.put(cart.getDateofPassage(), buffer);
 		}
+
+        Set<String> s = orderMap.keySet();
+        for(String set : s)
+        {
+            System.out.println(orderMap.get(set));
+        }
 
 	}
 

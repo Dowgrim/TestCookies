@@ -27,7 +27,7 @@ public class SetDateHour extends Command<CookieOnDemand> {
 
     @Override
     public void execute() {
-        customer.setDateOfPassage(dateOfPassage);
+        system.getShoppingCart(customer).setDateOfPassage(dateOfPassage);
     }
 
     @Override
